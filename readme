@@ -1,0 +1,5 @@
+This repository contains a wrapper for interfacing openFrameworks to the partial C++ port of ZXing. It allows realtime QR Code detection and decoding.
+
+ofxZxing runs against the latest version of openFrameworks, available on GitHub at https://github.com/openframeworks/openFrameworks/
+
+ZXing ("Zebra Crossing") is included as a static i386 library in the repository. To compile from source, check out from the ZXing project at https://code.google.com/p/zxing/ The included library was compiled with NO_ICONV defined.
