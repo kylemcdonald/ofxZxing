@@ -13,7 +13,7 @@ using namespace std;
 using namespace zxing;
 using namespace zxing::qrcode;
 
-Result decode(ofPixels& pixels, bool adaptive) {
+Result decode(ofPixels& pixels, bool adaptive = true) {
   try {
     Ref<ofPixelsBitmapSource> source(new ofPixelsBitmapSource(pixels));
     
@@ -25,7 +25,7 @@ Result decode(ofPixels& pixels, bool adaptive) {
     }
 		
     Ref<BinaryBitmap> image(new BinaryBitmap(binarizer));
-    QRCodeReader reader;
+	QRCodeReader reader;
 		DecodeHints hints;
 		hints.addFormat(BarcodeFormat_QR_CODE);
 		hints.setTryHarder(true);
