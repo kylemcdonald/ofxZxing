@@ -5,3 +5,11 @@ ofxZxing runs against the latest version of openFrameworks, available on GitHub 
 ZXing ("Zebra Crossing") is included as a static i386 library in the repository. To compile from source, check out from the ZXing project at https://code.google.com/p/zxing/ The included library was compiled with NO_ICONV defined.
 
 If you want to make a project using ofxZxing from scratch, make sure to add the ofxZxing/include folder to your header search path.
+
+IPHONE specific instructions - 
+
+When building the iPhone version you'll need either the ios (deployment) version or the sim (simulator) version. be sure to include only the library version that you're targeting. Also, you'll need to add
+
+#define OF_IPHONE
+
+in your application.h file.

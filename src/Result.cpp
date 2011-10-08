@@ -39,13 +39,33 @@ void Result::draw() {
 	
 	ofSetColor(ofColor::red);
 	ofSetLineWidth(3);
+	
+#ifdef OF_IPHONE
+	
+	GLfloat triVertices[points.size()*2];
+	
+	for(int i = 0; i < points.size(); i++) {
+		triVertices[i] = points[i].x;
+		triVertices[i+1] = points[i].y;
+	}
+	
+	glEnableClientState(GL_VERTEX_ARRAY);
+	
+	glVertexPointer(3, GL_FLOAT, 0, triVertices);
+	glDrawArrays(GL_TRIANGLES, 0, 3);
+	
+	glDisableClientState(GL_VERTEX_ARRAY);
+	
+#elseif
+	
+	
 	glBegin(GL_LINE_LOOP);
 	for(int i = 0; i < points.size(); i++) {
 		glVertex2f(points[i].x, points[i].y);
 	}
 	glEnd();
 	
-	
+#endif	
 	for(int i = 0; i < points.size(); i++) {
 		drawTextBox(ofToString(i), points[i]);
 	}
