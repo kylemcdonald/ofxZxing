@@ -5,6 +5,6 @@
 
 namespace ofxZxing {
 
-Result decode(ofPixels& pixels, bool adaptive = true);
+	Result decode(ofPixels& pixels, bool adaptive);
 
 }
