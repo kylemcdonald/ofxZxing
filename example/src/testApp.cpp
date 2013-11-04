@@ -3,13 +3,13 @@
 void testApp::setup() {
 	ofSetVerticalSync(true);
 	cam.initGrabber(640, 480);
-	logo.loadImage("of-80s.png");
+	logo.loadImage("of.png");
 }
 
 void testApp::update() {
 	cam.update();
 	if(cam.isFrameNew()) {
-		ofxZxing::Result curResult = ofxZxing::decode(cam.getPixelsRef());
+		ofxZxing::Result curResult = ofxZxing::decode(cam.getPixelsRef(), true);
 		float curTime = ofGetElapsedTimef();
 		if(curResult.getFound()) { // only update if we found something, avoid flickering
 			result = curResult;

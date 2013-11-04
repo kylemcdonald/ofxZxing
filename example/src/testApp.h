@@ -1,7 +1,6 @@
 #pragma once
 
 #include "ofMain.h"
-
 #include "ofxZxing.h"
 
 class testApp : public ofBaseApp {
